@@ -6,6 +6,7 @@
   },
   "extends": [
     "plugin:vue/recommended",
+    "@vue/airbnb",
     "@vue/typescript",
     "@vue/prettier",
     "plugin:@typescript-eslint/recommended",
