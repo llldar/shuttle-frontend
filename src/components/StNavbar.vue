@@ -28,6 +28,23 @@ export default {
       required: true,
       default: [{ name: "Home", path: "/" }]
     }
+  },
+  data() {
+    return {
+      scrolled: false
+    };
+  },
+
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      this.scrolled = window.scrollY > 0;
+    }
   }
 };
 </script>
