@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <st-navbar :links="links"></st-navbar>
+    <!-- <st-navbar :links="links"></st-navbar> -->
+    <st-progress-bar></st-progress-bar>
     <router-view />
   </div>
 </template>
 
 <script lang="ts">
 import StNavbar from "@/components/StNavbar.vue";
+import StProgressBar from "@/components/StProgressBar.vue";
 
 export default {
   name: "App",
   components: {
-    StNavbar
+    // StNavbar,
+    StProgressBar
   },
   data() {
     return {
