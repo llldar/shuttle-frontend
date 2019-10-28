@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <!-- <st-navbar :links="links"></st-navbar> -->
+    <st-navbar :links="links"></st-navbar>
     <st-progress-bar></st-progress-bar>
-    <router-view />
+    <main>
+      <router-view />
+    </main>
   </div>
 </template>
 
@@ -13,7 +15,7 @@ import StProgressBar from "@/components/StProgressBar.vue";
 export default {
   name: "App",
   components: {
-    // StNavbar,
+    StNavbar,
     StProgressBar
   },
   data() {
@@ -37,12 +39,25 @@ export default {
 body {
   margin: 0;
 }
+
+main {
+  flex: 1 0 auto;
+  padding: var(--space) var(--space) 0;
+  width: 100%;
+}
+main::after {
+  content: "\00a0"; /* &nbsp; */
+  display: block;
+  margin-top: var(--space);
+  height: 0px;
+  visibility: hidden;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 </style>

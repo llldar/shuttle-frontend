@@ -1,15 +1,13 @@
 <template>
-  <div id="container">
+  <div id="navbar">
     <nav>
-      <ul>
-        <li>
-          <a id="logo" href="#">LOGO</a>
-        </li>
-        <li v-for="link in links" :key="link.path">
-          <router-link :to="link.path">{{ link.name }}</router-link>
-        </li>
-        <a id="menu-icon" href="#"></a>
-      </ul>
+      <div class="nav-item">
+        <img id="nav_logo" src="@/assets/logo.svg" />
+      </div>
+      <div v-for="link in links" :key="link.path" class="nav-item">
+        <router-link :to="link.path">{{ link.name }}</router-link>
+      </div>
+      <a id="menu-icon" class="nav-item" href="#"></a>
     </nav>
   </div>
 </template>
@@ -50,34 +48,27 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#container {
+#navbar {
   width: 100%;
-  display: flex;
+  order: -1;
 }
+
+#nav_logo {
+  max-height: 2rem;
+  min-height: 1rem;
+}
+
 nav {
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 0;
+  background-color: #0f0e17;
+  display: flex;
+
   width: 100%;
-  ul {
-    text-align: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 15px;
-    li {
-      display: inline;
-      font-family: "Fira Sans", sans-serif;
-      font-size: 17px;
-      a {
-        color: #f2f2f2;
-        text-decoration: none;
-        padding: 14px;
-        &:hover {
-          background-color: #111;
-        }
-      }
-    }
+  min-height: 2rem;
+  .nav-item {
+    text-decoration: none;
+    color: white;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 }
 </style>

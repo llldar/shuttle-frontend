@@ -23,7 +23,7 @@ export default {
   props: {
     height: {
       type: String,
-      default: ".5rem"
+      default: ".25rem"
     },
     zIndex: {
       type: String,

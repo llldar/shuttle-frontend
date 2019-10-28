@@ -17,3 +17,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+#Home {
+  display: flex;
+  flex: 1;
+}
+</style>
