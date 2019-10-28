@@ -13,38 +13,28 @@
 </template>
 
 <script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
+
 interface Link {
   name: string;
   path: string;
 }
 
-export default {
-  name: "StNavbar",
-  props: {
-    links: {
-      type: Array as () => Link[],
-      required: true,
-      default: [{ name: "Home", path: "/" }]
-    }
-  },
-  data() {
-    return {
-      scrolled: false
-    };
-  },
-
+@Component
+export default class StNavbar extends Vue {
+  links: Link[] = [];
+  scrolled: boolean = false;
+  handleScroll() {
+    this.scrolled = window.scrollY > 0;
+  }
   created() {
     window.addEventListener("scroll", this.handleScroll);
-  },
+  }
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      this.scrolled = window.scrollY > 0;
-    }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">
@@ -59,7 +49,8 @@ export default {
 }
 
 nav {
-  background-color: #0f0e17;
+  $color-dark: #0f0e17;
+  background-color: $color-dark;
   display: flex;
 
   width: 100%;
