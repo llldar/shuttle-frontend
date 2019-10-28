@@ -18,66 +18,37 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: "StProgressBar",
-  props: {
-    height: {
-      type: String,
-      default: ".25rem"
-    },
-    zIndex: {
-      type: String,
-      default: "50"
-    },
-    backgroundColor: {
-      type: String,
-      default: "linear-gradient(to right, #38C172, #51D88A)"
-    },
-    containerColor: {
-      type: String,
-      default: "transparent"
-    },
-    barClass: {
-      type: Object,
-      default: () => {}
-    },
-    containerClass: {
-      type: Object,
-      default: () => {
-        return {
-          "progress-bar-container--container": true
-        };
-      }
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component
+export default class StProgressBar extends Vue {
+  width = 0;
+  height: string = '.25rem';
+  zIndex: string = '50';
+  backgroundColor: string = 'linear-gradient(to right, #38C172, #51D88A)';
+  containerColor: string = 'transparent';
+  barClass = {};
+  containerClass: string = 'progress-bar-container--container';
+
+  handleScroll() {
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    this.width = (window.scrollY / height) * 100;
+    const eventWidth = Math.ceil(this.width);
+    if (eventWidth === 0) {
+      this.$emit('begin');
     }
-  },
-  data() {
-    return {
-      width: 0
-    };
-  },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-    window.dispatchEvent(new Event("scroll"));
-  },
-  destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      const height =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-      this.width = (window.scrollY / height) * 100;
-      const eventWidth = Math.ceil(this.width);
-      if (eventWidth === 0) {
-        this.$emit("begin");
-      }
-      if (eventWidth === 100) {
-        this.$emit("complete");
-      }
+    if (eventWidth === 100) {
+      this.$emit('complete');
     }
   }
-};
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+    window.dispatchEvent(new Event('scroll'));
+  }
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+}
 </script>
 
 <style scoped>

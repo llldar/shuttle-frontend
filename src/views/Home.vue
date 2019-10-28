@@ -1,17 +1,15 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.svg" width="80px" height="80px" />
-    <HelloWorld
-      msg="Shuttle -- Deliver your data, through the cloud, to the world, instantly"
-    />
+    <img alt="Shuttle logo" src="../assets/logo.svg" width="80px" height="80px" />
+    <HelloWorld msg="Shuttle -- Deliver your data, through the cloud, to the world, instantly" />
   </div>
 </template>
 
 <script lang="ts">
-import HelloWorld from "@/components/HelloWorld.vue";
+import HelloWorld from '@/components/HelloWorld.vue';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     HelloWorld
   }
@@ -21,6 +19,5 @@ export default {
 <style scoped>
 #Home {
   display: flex;
-  flex: 1;
 }
 </style>

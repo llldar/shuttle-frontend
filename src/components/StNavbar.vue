@@ -1,7 +1,7 @@
 <template>
   <div id="navbar">
     <nav>
-      <div class="nav-item">
+      <div class="nav-brand">
         <img id="nav_logo" src="@/assets/logo.svg" />
       </div>
       <div v-for="link in links" :key="link.path" class="nav-item">
@@ -13,8 +13,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import { Vue, Component } from 'vue-property-decorator';
 
 interface Link {
   name: string;
@@ -23,16 +22,25 @@ interface Link {
 
 @Component
 export default class StNavbar extends Vue {
-  links: Link[] = [];
+  links: Link[] = [
+    {
+      name: 'Home',
+      path: '/'
+    },
+    {
+      name: 'About',
+      path: '/About'
+    }
+  ];
   scrolled: boolean = false;
   handleScroll() {
     this.scrolled = window.scrollY > 0;
   }
   created() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll);
   }
   destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 </script>
@@ -43,11 +51,6 @@ export default class StNavbar extends Vue {
   order: -1;
 }
 
-#nav_logo {
-  max-height: 2rem;
-  min-height: 1rem;
-}
-
 nav {
   $color-dark: #0f0e17;
   background-color: $color-dark;
@@ -55,11 +58,27 @@ nav {
 
   width: 100%;
   min-height: 2rem;
+  .nav-brand {
+    display: flex;
+    margin: 1rem 2rem;
+    #nav_logo {
+      max-height: 2rem;
+      min-height: 1rem;
+    }
+  }
   .nav-item {
+    display: flex;
     text-decoration: none;
     color: white;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    a {
+      text-decoration: none;
+      color: white;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
   }
 }
 </style>
