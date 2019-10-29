@@ -1,0 +1,24 @@
+// containers
+@import './variables.scss';
+
+@mixin conainer($side-margin) {
+  @extend %st-default-background;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: $side-margin;
+  padding-right: $side-margin;
+  margin: 0;
+}
+
+// utility
+
+@mixin mx($width) {
+  margin-left: $width;
+  margin-right: $width;
+}
+
+@mixin my($height) {
+  margin-top: $height;
+  margin-bottom: $height;
+}

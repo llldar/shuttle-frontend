@@ -14,8 +14,8 @@ export default class StFootbar extends Vue {}
 
 <style scoped lang="scss">
 #footbar {
-  $color-dark: #0f0e17;
-  background-color: $color-dark;
+  @extend %st-dark-background;
+
   display: flex;
   width: 100%;
   padding-top: 10rem;

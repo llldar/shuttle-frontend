@@ -7,10 +7,10 @@
         <h4>Please use Firefox/Chrome/Safari/Edge for best experience</h4>
       </div>
     </div>
+    <st-progress-bar />
     <header>
       <st-navbar />
     </header>
-    <st-progress-bar />
     <main>
       <router-view />
     </main>
@@ -47,14 +47,12 @@ export default {
 </script>
 
 <style lang="scss">
-$navbar-height: 3rem;
-
 body {
   margin: 0;
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: $font-family-sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -67,14 +65,13 @@ body {
 }
 
 main {
-  margin-top: $navbar-height;
   flex: 1 0 auto;
   padding: var(--space) var(--space) 0;
   width: 100%;
 }
 
 main::after {
-  content: '\00a0'; /* &nbsp; */
+  content: '\00a0';
   display: block;
   margin-top: var(--space);
   height: 0px;

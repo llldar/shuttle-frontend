@@ -2,8 +2,8 @@
   <div id="navbar">
     <nav :class="navClass">
       <div class="nav-brand">
-        <img id="nav_logo" src="@/assets/logo.svg" />
-        <span>Shuttle</span>
+        <img id="nav-logo" src="@/assets/logo.svg" />
+        <h3 id="nav-text">Shuttle</h3>
       </div>
       <div class="nav-links">
         <div v-for="link in links" :key="link.path" class="nav-item">
@@ -69,51 +69,40 @@ export default class StNavbar extends Vue {
 }
 
 nav {
-  $color-dark: #0f0e17;
   $side-width: 2rem;
   position: fixed;
   top: 0;
   left: 0;
 
-  background-color: $color-dark;
+  @extend %st-light-background;
   display: flex;
 
   &.hidden {
     opacity: 0;
     transform: translate(0, -3rem);
-    transition: transform 0.3s, background 0.3s, color 0.3s, opacity 0 0.3s;
+    transition: transform 0.3s, background 0.3s, color 0.3s, opacity 0.2s;
   }
 
   &.visible {
     opacity: 1;
     transform: translate(0, 0);
-    transition: transform 0.3s, background 0.3s, color 0.3s;
+    transition: transform 0.3s, background 0.3s, color 0.3s, opacity 0.2s;
   }
 
   width: 100%;
   height: 3rem;
-
-  @mixin mx($width) {
-    margin-left: $width;
-    margin-right: $width;
-  }
-
-  @mixin my($height) {
-    margin-top: $height;
-    margin-bottom: $height;
-  }
 
   .nav-brand {
     display: flex;
     margin-left: $side-width;
     @include my(0.75rem);
 
-    #nav_logo {
+    #nav-logo {
       @include mx(1rem);
       height: 100%;
     }
 
-    span {
+    #nav-text {
       margin-right: 1rem;
       @include my(auto);
       color: white;

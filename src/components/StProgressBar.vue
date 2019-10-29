@@ -25,7 +25,7 @@ export default class StProgressBar extends Vue {
   width = 0;
   height: string = '.3rem';
   zIndex: string = '50';
-  backgroundColor: string = 'linear-gradient(to right, #38C172, #51D88A)';
+  backgroundColor: string = 'linear-gradient(315deg, #f6d327 0%, #de4daa 74%)';
   containerColor: string = 'transparent';
   barClass = {};
   containerClass: string = 'progress-bar-container--container';
