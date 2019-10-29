@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style lang="scss">
+$navbar-height: 3rem;
+
 body {
   margin: 0;
 }
@@ -43,6 +45,7 @@ body {
 }
 
 main {
+  margin-top: $navbar-height;
   flex: 1 0 auto;
   padding: var(--space) var(--space) 0;
   width: 100%;
@@ -67,5 +70,9 @@ main::after {
 
 header footer {
   flex: none;
+}
+
+header {
+  height: $navbar-height;
 }
 </style>

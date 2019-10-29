@@ -18,12 +18,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Watch } from 'vue-property-decorator';
 
 @Component
 export default class StProgressBar extends Vue {
   width = 0;
-  height: string = '.25rem';
+  height: string = '.3rem';
   zIndex: string = '50';
   backgroundColor: string = 'linear-gradient(to right, #38C172, #51D88A)';
   containerColor: string = 'transparent';
@@ -47,6 +47,11 @@ export default class StProgressBar extends Vue {
   }
   destroyed() {
     window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  @Watch('$route')
+  onRouteChanged() {
+    this.width = 0;
   }
 }
 </script>
