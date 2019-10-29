@@ -1,5 +1,12 @@
 <template>
-  <div id="app">
+  <div id="app" :class="scrollable">
+    <div :class="IEBlock">
+      <div class="info-card">
+        <h1>Warning</h1>
+        <h4>This website does not support Internet Explorer</h4>
+        <h4>Please use Firefox/Chrome/Safari/Edge for best experience</h4>
+      </div>
+    </div>
     <header>
       <st-navbar />
     </header>
@@ -18,12 +25,23 @@ import StNavbar from '@/components/StNavbar.vue';
 import StProgressBar from '@/components/StProgressBar.vue';
 import StFootbar from '@/components/StFootBar.vue';
 
+const detectIE = (): boolean => {
+  const ua = window.navigator.userAgent;
+  return ua.indexOf('MSIE ') !== -1 || ua.indexOf('Trident/') !== -1;
+};
+
 export default {
   name: 'App',
   components: {
     StNavbar,
     StProgressBar,
     StFootbar
+  },
+  data: function() {
+    return {
+      IEBlock: detectIE() ? 'IEBlock' : 'hidden',
+      scrollable: detectIE() ? 'no-scroll' : ''
+    };
   }
 };
 </script>
@@ -42,6 +60,10 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  & .no-scroll {
+    position: fixed;
+    overflow: hidden;
+  }
 }
 
 main {
@@ -74,5 +96,33 @@ header footer {
 
 header {
   height: $navbar-height;
+}
+
+.hidden {
+  display: none;
+}
+
+.IEBlock {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+  display: flex;
+  flex-wrap: wrap;
+  .info-card {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15rem;
+    h1,
+    h4 {
+      color: white;
+    }
+  }
 }
 </style>
