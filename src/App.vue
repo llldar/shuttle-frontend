@@ -9,7 +9,7 @@
     </div>
     <st-progress-bar />
     <header>
-      <st-navbar />
+      <st-navbar :links="links" />
     </header>
     <main>
       <router-view />
@@ -40,7 +40,17 @@ export default {
   data: function() {
     return {
       IEBlock: detectIE() ? 'IEBlock' : 'hidden',
-      scrollable: detectIE() ? 'no-scroll' : ''
+      scrollable: detectIE() ? 'no-scroll' : '',
+      links: [
+        {
+          name: 'Home',
+          path: '/'
+        },
+        {
+          name: 'About',
+          path: '/About'
+        }
+      ]
     };
   }
 };
@@ -68,6 +78,7 @@ main {
   flex: 1 0 auto;
   padding: var(--space) var(--space) 0;
   width: 100%;
+  background-color: #f8f4f4;
 }
 
 main::after {

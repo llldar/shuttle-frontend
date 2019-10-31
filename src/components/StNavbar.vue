@@ -15,7 +15,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
+import 'reflect-metadata';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
 interface Link {
   name: string;
@@ -24,16 +25,7 @@ interface Link {
 
 @Component
 export default class StNavbar extends Vue {
-  links: Link[] = [
-    {
-      name: 'Home',
-      path: '/'
-    },
-    {
-      name: 'About',
-      path: '/About'
-    }
-  ];
+  @Prop() links!: Link[];
   currentScroll: number = 0;
   previousScroll: number = 0;
   navClass: string = 'visible';
