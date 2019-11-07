@@ -1,6 +1,6 @@
 <template>
-  <div id="app" :class="scrollable">
-    <div :class="IEBlock">
+  <div id="app" :class="appClass">
+    <div :class="containerClass">
       <div class="info-card">
         <h1>Warning</h1>
         <h4>This website does not support Internet Explorer</h4>
@@ -27,7 +27,7 @@ import StFootbar from '@/components/StFootBar.vue';
 
 const detectIE = (): boolean => {
   const ua = window.navigator.userAgent;
-  return ua.indexOf('MSIE ') !== -1 || ua.indexOf('Trident/') !== -1;
+  return ua.includes('MSIE ') || ua.includes('Trident/');
 };
 
 export default {
@@ -39,8 +39,6 @@ export default {
   },
   data: function() {
     return {
-      IEBlock: detectIE() ? 'IEBlock' : 'hidden',
-      scrollable: detectIE() ? 'no-scroll' : '',
       links: [
         {
           name: 'Home',
@@ -52,6 +50,20 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    appClass() {
+      return {
+        'no-scroll': detectIE()
+      };
+    },
+    containerClass() {
+      const isIE = detectIE();
+      return {
+        IEBlock: isIE,
+        hidden: !isIE
+      };
+    }
   }
 };
 </script>
