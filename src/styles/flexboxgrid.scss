@@ -34,6 +34,11 @@ $half-gutter-width: $flexboxgrid-gutter-width * 0.5;
   padding-left: $flexboxgrid-outer-margin;
 }
 
+.container-fluid-full {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .row {
   box-sizing: border-box;
   display: flex;

@@ -57,7 +57,7 @@ export default class StNavbar extends Vue {
 #navbar {
   width: 100%;
   order: -1;
-  z-index: 10;
+  z-index: z(navbar);
 }
 
 nav {
@@ -65,6 +65,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: z(navbar);
 
   @extend %st-light-background;
   display: flex;
@@ -82,7 +83,7 @@ nav {
   }
 
   width: 100%;
-  height: 3rem;
+  height: $navbar-height;
 
   .nav-brand {
     display: flex;

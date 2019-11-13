@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <st-section>
+    <st-section :background="'#fff'" :height="'80vh'">
       <img alt="Shuttle logo" src="../assets/logo.svg" width="80px" height="80px" />
-      <span id="brand-text">Shuttle -- Deliver your data, through the cloud, to the world, instantly</span>
+      <span id="brand-text">Shuttle</span>
+      <st-card class="col-md-6" shadow header="some title" content="somecontent" footer="somefooter" />
     </st-section>
-    <st-card class="col-md-6" shadow header="some title" content="somecontent" footer="somefooter" />
   </div>
 </template>
 
@@ -23,7 +23,9 @@ export default {
 
 <style scoped lang="scss">
 .home {
-  @extend .container-fluid;
+  @extend .container-fluid-full;
+
+  padding-top: $navbar-height;
 
   #brand-text {
     @include mx(auto);
