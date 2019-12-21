@@ -1,14 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" viewBox="0 0 56 35" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<radialGradient id="a" cx="97.187%" cy="16.051%" r="98.073%" gradientTransform="translate(.97187 .16051) scale(.63521 1) rotate(164.62) translate(-.97187 -.16051)">
-<stop stop-color="#0AEEC0" offset="0"/>
-<stop stop-color="#C21ED2" offset=".9996"/>
-</radialGradient>
-</defs>
-<g fill="none" fill-rule="evenodd">
-<g transform="translate(-357 -417)" fill="url(#a)" fill-rule="nonzero">
-<path d="m397 417h-35c-2.8 0-5 2.2-5 5v22.5h5c0 4.1 3.4 7.5 7.5 7.5s7.5-3.4 7.5-7.5h13.8c0 4.1 3.4 7.5 7.5 7.5s7.5-3.4 7.5-7.5h6.3v-12.5l-15.1-15zm-35 15v-10h10v10h-10zm7.5 16.3c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8zm17.5-16.3h-10v-10h10v10zm11.3 16.3c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.8 3.8-3.8 3.8zm-6.3-16.3v-10h2.5l10 10h-12.5z"/>
-</g>
-</g>
+
+<svg width="118px" height="78px" viewBox="0 0 118 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <radialGradient cx="97.1866821%" cy="16.0508839%" fx="97.1866821%" fy="16.0508839%" r="96.6242087%" gradientTransform="translate(0.971867,0.160509),scale(0.636364,1.000000),rotate(164.588910),translate(-0.971867,-0.160509)" id="radialGradient-1">
+            <stop stop-color="#0AEEC0" offset="0%"></stop>
+            <stop stop-color="#C21ED2" offset="100%"></stop>
+        </radialGradient>
+        <path d="M79.8548094,0 L9.98185118,0 C4.39201452,0 0,4.4 0,10 L0,55 L9.98185118,55 C9.98185118,63.2 16.76951,70 24.9546279,70 C33.1397459,70 39.9274047,63.2 39.9274047,55 L67.477314,55 C67.477314,63.2 74.2649728,70 82.4500907,70 C90.6352087,70 97.4228675,63.2 97.4228675,55 L110,55 L110,30 L79.8548094,0 Z M10,30 L10,10 L30,10 L30,30 L10,30 Z M25.5,62 C21.3552632,62 18,58.6447368 18,54.5 C18,50.3552632 21.3552632,47 25.5,47 C29.6447368,47 33,50.3552632 33,54.5 C33,58.6447368 29.6447368,62 25.5,62 Z M60,30 L40,30 L40,10 L60,10 L60,30 Z M82.5,62 C78.3552632,62 75,58.6447368 75,54.5 C75,50.3552632 78.3552632,47 82.5,47 C86.6447368,47 90,50.3552632 90,54.5 C90,58.6447368 86.4473684,62 82.5,62 Z M70,30 L70,10 L75,10 L95,30 L70,30 Z" id="path-2"></path>
+        <filter x="-6.4%" y="-7.1%" width="112.7%" height="120.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.180698208 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-128.000000, -254.000000)">
+            <g id="Section-1" transform="translate(0.000000, 67.000000)">
+                <g id="shuttle-logo" transform="translate(132.000000, 189.000000)">
+                    <g id="Bus-Shuttle" fill-rule="nonzero">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#radialGradient-1)" xlink:href="#path-2"></use>
+                    </g>
+                    <circle id="Oval" fill="#1C4759" cx="25" cy="55" r="15"></circle>
+                    <circle id="Oval" fill="#1C4759" cx="82.5" cy="54.5" r="15.5"></circle>
+                    <circle id="Oval" fill="#BFDBE0" cx="25.5" cy="54.5" r="7.5"></circle>
+                    <circle id="Oval" fill="#BFDBE0" cx="82.5" cy="54.5" r="7.5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>

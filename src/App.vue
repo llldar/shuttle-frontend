@@ -4,26 +4,28 @@
       <div class="info-card">
         <h1>Warning</h1>
         <h4>This website does not support Internet Explorer</h4>
-        <h4>Please use Firefox/Chrome/Safari/Edge for best experience</h4>
+        <h4>Please use Chrome/Firefox/Safari/Edge for best experience</h4>
       </div>
     </div>
-    <st-progress-bar />
+    <progress-bar />
     <header>
-      <st-navbar :links="links" />
+      <navbar :links="links" />
     </header>
     <main>
       <router-view />
     </main>
     <footer>
-      <st-footbar />
+      <footbar>
+        <span>sticky footer</span>
+      </footbar>
     </footer>
   </div>
 </template>
 
 <script lang="ts">
-import StNavbar from '@/components/StNavbar.vue';
-import StProgressBar from '@/components/StProgressBar.vue';
-import StFootbar from '@/components/StFootBar.vue';
+import Navbar from '@/components/Navbar.vue';
+import ProgressBar from '@/components/ProgressBar.vue';
+import Footbar from '@/components/FootBar.vue';
 
 const detectIE = (): boolean => {
   const ua = window.navigator.userAgent;
@@ -33,20 +35,24 @@ const detectIE = (): boolean => {
 export default {
   name: 'App',
   components: {
-    StNavbar,
-    StProgressBar,
-    StFootbar
+    Navbar,
+    ProgressBar,
+    Footbar
   },
   data: function() {
     return {
       links: [
         {
-          name: 'Home',
-          path: '/'
+          name: 'Features',
+          path: '/Features'
         },
         {
-          name: 'About',
-          path: '/About'
+          name: 'Docs',
+          path: '/Docs'
+        },
+        {
+          name: 'Showcase',
+          path: '/Showcase'
         }
       ]
     };

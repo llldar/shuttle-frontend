@@ -1,15 +1,15 @@
 <template>
   <div id="footbar">
-    <span>sticky footer</span>
+    <slot></slot>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import 'reflect-metadata';
+import { Vue, Component } from 'vue-property-decorator';
 
 @Component
-export default class StFootbar extends Vue {}
+export default class Footbar extends Vue {}
 </script>
 
 <style scoped lang="scss">

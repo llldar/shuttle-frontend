@@ -21,7 +21,7 @@
 import { Component, Vue, Watch } from 'vue-property-decorator';
 
 @Component
-export default class StProgressBar extends Vue {
+export default class ProgressBar extends Vue {
   width = 0;
   height: string = '.3rem';
   zIndex: string = '50';

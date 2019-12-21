@@ -20,8 +20,8 @@ const requireComponent = require.context(
   './components',
   // Do not look in subdirectories
   false,
-  // Only include "Base" prefixed .vue files
-  /Base\w+\.(vue)$/
+  // Only include "St" prefixed .vue files
+  /St\w+\.(vue)$/
 );
 
 requireComponent.keys().forEach((fileName): void => {

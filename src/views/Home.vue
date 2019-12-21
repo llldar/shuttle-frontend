@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <st-section :background="'#fff'" :height="'80vh'">
-      <img alt="Shuttle logo" src="../assets/logo.svg" width="80px" height="80px" />
+      <st-logo />
       <span id="brand-text">Shuttle</span>
       <st-card class="col-md-6" shadow header="some title" content="somecontent" footer="somefooter" />
     </st-section>

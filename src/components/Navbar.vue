@@ -1,10 +1,10 @@
 <template>
   <div id="navbar">
     <nav :class="navClass">
-      <div class="nav-brand">
-        <img id="nav-logo" src="@/assets/logo.svg" />
+      <a class="nav-brand" href="/">
+        <img id="nav-logo" src="@/assets/logo-white.svg" />
         <h3 id="nav-text">Shuttle</h3>
-      </div>
+      </a>
       <div class="nav-links">
         <div v-for="link in links" :key="link.path" class="nav-item">
           <router-link :to="link.path">{{ link.name }}</router-link>
@@ -24,7 +24,7 @@ interface Link {
 }
 
 @Component
-export default class StNavbar extends Vue {
+export default class Navbar extends Vue {
   @Prop() links!: Link[];
   currentScroll: number = 0;
   previousScroll: number = 0;
@@ -88,7 +88,8 @@ nav {
   .nav-brand {
     display: flex;
     margin-left: $side-width;
-    @include my(0.75rem);
+    @include my($nav-item-padding);
+    text-decoration: none;
 
     #nav-logo {
       @include mx(1rem);
@@ -104,16 +105,16 @@ nav {
 
   .nav-links {
     display: flex;
-    margin-left: auto;
-    margin-right: $side-width;
+    margin-left: 0;
+    margin-right: auto;
   }
 
   .nav-item {
     display: flex;
     text-decoration: none;
     color: white;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: $nav-item-padding;
+    padding-right: $nav-item-padding;
     margin-left: auto;
     a {
       text-decoration: none;
