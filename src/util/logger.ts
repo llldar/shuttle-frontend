@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { colors } from './consts';
+import { consoleColors } from './consts';
 
 /**
  * Enum for logger logLevel.
@@ -33,25 +33,25 @@ class Logger {
    */
   private static log(level: logLevel, componentName: string, message: any): void {
     const time = new Date();
-    let color = colors.FgWhite;
+    let color = consoleColors.FgWhite;
     switch (level) {
       case logLevel.Debug:
-        color = colors.FgCyan;
+        color = consoleColors.FgCyan;
         break;
       case logLevel.Info:
-        color = colors.FgGreen;
+        color = consoleColors.FgGreen;
         break;
       case logLevel.Warn:
-        color = colors.FgYellow;
+        color = consoleColors.FgYellow;
         break;
       case logLevel.Error:
-        color = colors.FgRed;
+        color = consoleColors.FgRed;
         break;
       default:
-        color = colors.FgWhite;
+        color = consoleColors.FgWhite;
         break;
     }
-    console.log(`${time.toISOString()} - ${color}[${level}][${componentName}]${message}${colors.Reset}`);
+    console.log(`${time.toISOString()} - ${color}[${level}][${componentName}]${message}${consoleColors.Reset}`);
   }
 
   public static raw(message: any): void {

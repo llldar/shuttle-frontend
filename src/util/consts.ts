@@ -1,4 +1,8 @@
-export const enum colors {
+export const enum linearGradients {
+  Pink = 'linear-gradient(315deg,#C21ED2 0%, DB6AE4 74%);'
+}
+
+export const enum consoleColors {
   Reset = '\x1b[0m',
   Bright = '\x1b[1m',
   Dim = '\x1b[2m',

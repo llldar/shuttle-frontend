@@ -1,5 +1,5 @@
 <template>
-  <span class="gradient-text" :style="{ 'font-size': size, background: color }">
+  <span class="gradient-text" :style="{ 'font-size': size, 'background-image': color }">
     <slot></slot>
   </span>
 </template>
@@ -9,7 +9,7 @@ import 'reflect-metadata';
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
-export default class GradientText extends Vue {
+export default class StGradientText extends Vue {
   @Prop() color!: string;
   @Prop() size!: string;
 }

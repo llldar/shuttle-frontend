@@ -1,7 +1,7 @@
 // containers
 @import './variables.scss';
 
-@mixin conainer($side-margin) {
+@mixin container($side-margin) {
   @extend %st-default-background;
   height: 100%;
   display: flex;

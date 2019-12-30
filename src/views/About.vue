@@ -6,6 +6,6 @@
 
 <style scoped lang="scss">
 .about {
-  @include conainer(2rem);
+  @include container(2rem);
 }
 </style>
