@@ -1,6 +1,10 @@
 export enum colors {
   blue = '#1e97d2',
-  pink = '#a6267b'
+  purple = '#a6267b',
+  demonicPurple = '#c21de2',
+  sensualFumes = '#cd68e2',
+  turbo = '#f6d327',
+  berry = '#de4daa'
 }
 
 export const enum consoleColors {

@@ -8,7 +8,7 @@ import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class StCard extends Vue {
-  @Prop() width: string = '80px';
-  @Prop() height: string = '80px';
+  @Prop() width!: string;
+  @Prop() height!: string;
 }
 </script>
